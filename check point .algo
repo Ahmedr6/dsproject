@@ -1,0 +1,102 @@
+firs question 
+program SumDistinctiveElements;
+
+var
+  sum, sum1, bothSum, i, j: Integer;
+  arr, arr1: array[1..4] of Integer;
+
+begin
+  // Given two sets of elements, find the sum of all distinct elements from the set.
+  // In other words, find the sum of all elements which are present in either of the given set.
+
+  writeln('This program is set to sum up the distinctive elements in 2 arrays.');
+
+  sum := 0;
+  sum1 := 0;
+
+  // Scan the elements of the first array
+  writeln('Enter the first array elements:');
+  for i := 1 to 4 do
+  begin
+    readln(arr[i]);
+    writeln('The element number ', i, ' in the first array is ', arr[i]);
+  end;
+
+  // Scan the elements of the second array
+  writeln('Enter the second array elements:');
+  for j := 1 to 4 do
+  begin
+    readln(arr1[j]);
+    writeln('The element number ', j, ' in the second array is ', arr1[j]);
+  end;
+
+  // Sum up distinctive elements in the first array
+  for i := 1 to 4 do
+  begin
+    var found: Integer = 0;
+    for j := 1 to 4 do
+    begin
+      if arr[i] = arr1[j] then
+        found := 1;
+    end;
+
+    if found = 0 then
+      sum := sum + arr[i];
+  end;
+
+  writeln('The sum of the distinctive numbers in the first array is ', sum);
+
+  // Sum up distinctive elements in the second array
+  for j := 1 to 4 do
+  begin
+    var isFound: Integer = 0;
+    for i := 1 to 4 do
+    begin
+      if arr[i] = arr1[j] then
+        isFound := 1;
+    end;
+     if isFound = 0 then
+      sum1 := sum1 + arr1[j];
+  end;
+
+  writeln('The sum of the distinctive numbers in the second array is ', sum1);
+
+  // Sum up distinctive elements in both arrays
+  bothSum := sum1 + sum;
+  writeln('The sum of the distinctive numbers in both arrays is ', bothSum);
+
+end.
+
+
+
+
+    second question
+
+    program DotProduct;
+
+var
+  arr, arr1: array[1..10] of Integer;
+  i: Integer;
+
+procedure DotProductFunction;
+begin
+  for i := 1 to 10 do
+  begin
+    Write('Enter the element number ', i, ' in the first array: ');
+    ReadLn(arr[i]);
+    
+    Write('Enter the element number ', i, ' in the second array: ');
+    ReadLn(arr1[i]);
+    
+    if (arr[i] * arr1[i] = 0) then
+      WriteLn('This is not a dot product.')
+    else
+      WriteLn('This is a dot product.');
+  end;
+end;
+
+begin
+  DotProductFunction;
+end.
+
+
